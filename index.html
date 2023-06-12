@@ -1,1 +1,121 @@
-👋 Hi there 👋!
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oleg Gorobets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+        padding: 1em;
+      }
+      h2 {
+        margin-top: 20px
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hi, my name is Oleg!</h1>
+
+    I am software engineer and consultant with 15 years of experience specializing on complex backend projects.
+    <br/>
+    I am offering the following services:
+    <ul>
+        <li>API development for mobile and web applications</li>
+        <li>Web applications development</li>
+        <li>Developing cloud and serverless applications</li>
+        <li>Application troubleshooting and bug-fixing</li>
+        <li>Performance tuning and optimization</li>
+        <li>Database design</li>
+        <li>Integrations of applications built with different technologies</li>
+        <li>Custom applications developement</li>
+        <li>DevOps</li>
+    </ul>
+
+    <h2>Technologies</h2>
+    Java, Spring Boot, Spring Security, Spring Cloud, REST API, Swagger,
+    PostgreSQL, MySQL, Oracle, Cassandra, MongoDB, Neo4j, SQL, 
+    
+    <!-- security -->
+    Authentication, Authorization, OAuth, JWT, Single Sign-On,
+    Discretionary Access Control (DAC), Role-based access control (RBAC), Attribute-Based Access Control (ABAC), ACLs,
+
+    Git, Apache Zookeeper, Apache Kafka, ActiveMQ, RabbitMQ, Bootstrap,
+    Grails, Liquibase, Firebase, Github, Gitlab, 
+    Bitbucket, Hibernate, jOOQ, Redis, Memcached, EhCache, Spark, Spark ML, Websockets, 
+    ElasticSearch, Kibana, Logstash, ELK Stack, Grafana, Sonarqube, Drools,
+    
+    <!-- high-level stuff -->
+    Relational Database Management System (RDBMS), NoSQL, Object-Oriented Design, Continous Integration, Continuous Delivery, Continuous Deployment, CI/CD,
+    Monolithic Architecture, Microservices, Full-Stack, Full-text search, Machine Learning, NLP, 
+    High availability (HA), Scalability, SDLC,
+
+
+    JSON, XML, XSL, Protocol Buffers (protobuf), gRPC, Tomcat, Jetty, Netty, K8s, Kubernetes, HashiCorp Nomad, Nginx, SSL, DNS,
+    
+    <!-- testing -->
+    JUnit, Mockito, TestNG, Selenium, Cucumber, Katalon Studio, Jmeter,
+    <!-- Other languages -->
+    Scala, Groovy, Go (Golang), JavaScript, TypeScript, Python, Dart, R,
+    <!-- AWS -->
+    AWS, Amazon EC2, Amazon RDS, Amazon S3, AWS Lambda, Amazon SES, Amazon SQS, Amazon SNS, Amazon Route 53, 
+      Amazon ECS, Amazon ECR, Amazon ElastiCache, Amazon CloudWatch, Amazon EBS, Amazon EFS,
+    <!-- build tools -->
+    Maven, Gradle, Docker, Podman, Containers, Ansible, Terraform, Jenkins, TeamCity, Apache Ant,
+    <!-- frontend tools -->
+    Angular, PrimeNG, React, HTML, CSS, jQuery, Flutter, Android Development,
+    <!-- payments -->
+    Sripe API
+
+    <h2>Tools</h2>
+    IntelliJ IDEA, Visual Studio Code, Docker, Amazon Web Services (AWS), Linux
+
+    <h2>Contact me</h2>
+    <form method="post">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Your email:</label>
+          <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">I'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Describe your project or ask a question:</label>
+          <textarea name="description" id="description" class="form-control" rows="5"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!--
+    &#9749;
+    -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script>
+       function handleSubmit(event) {
+          event.preventDefault();
+          const formData = new FormData(event.target);
+          var object = {};
+          formData.forEach((value, key) => object[key] = value);
+          const json = JSON.stringify(object);
+          console.log(json);
+          fetch('https://x6rhftv8ji.execute-api.eu-west-1.amazonaws.com/test05', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: json,
+          })
+          .then((response) => response.json())
+          .then((data) => {
+              console.log('Success:', data);
+          })
+          .catch((error) => {
+              console.error('Error:', error);
+          });
+      }
+      const form = document.querySelector('form');
+      form.addEventListener('submit', handleSubmit);
+    </script>
+  </body>
+</html>
